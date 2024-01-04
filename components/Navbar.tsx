@@ -15,6 +15,7 @@ import {
   Star1,
 } from "iconsax-react";
 import Dropdown from "./UI/Dropdown";
+import Logo from "./Logo";
 
 const Navbar: React.FC<NavbarProps> = ({
   isLoggedIn,
@@ -22,10 +23,10 @@ const Navbar: React.FC<NavbarProps> = ({
   cartItemsCount,
 }) => {
   return (
-    <nav className="bg-white  fixed flex flex-col justify-center items-center w-full top-0 left-0 z-50 m-auto">
+    <nav className="bg-white fixed flex flex-col justify-center items-center w-full top-0 left-0 z-50 m-auto">
       <div className="bg-primary-green-600 w-full flex items-center justify-center p-2">
         <div className="w-full inline-flex items-center justify-evenly max-w-[1440px]">
-          <p className="text-Text-sm text-white font-medium">
+          <p className="text-Text-sm text-white font-medium text-center">
             Refer a Friend and Get $5.00 Open 24 hours. Join to Shop Sell
             Anything #WeShipWorldwide #BUY&SELL
           </p>
@@ -44,12 +45,13 @@ const Navbar: React.FC<NavbarProps> = ({
             variant="tertiary"
             inputSize="md"
             caretColor="white"
+            optionColor="text-primary-green-600"
           />
         </div>
       </div>
 
       <div className="max-w-[1440px] py-4 flex justify-center items-center gap-12">
-        <div>Logo</div>
+        <Logo />
         <form className="flex gap-2 items-center justify-start w-[600px]">
           <Input
             variant="primary"
@@ -58,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({
             leftIcon={<SearchNormal1 color="#292D32" />}
             fullWidth
           />
-          <Button>Search</Button>
+          <Button size="lg">Search</Button>
         </form>
         <div className="flex gap-5 items-center justify-start">
           <div className="flex items-center justify-start gap-1">
@@ -98,9 +100,11 @@ const Navbar: React.FC<NavbarProps> = ({
               },
               {
                 label: "About Us",
+                href: "/about",
               },
               {
                 label: "Contact Us",
+                href: "/contact",
               },
             ]}
           />
@@ -126,6 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     {
                       icon: <LogoutCurve color="#B90000" />,
                       label: "Sign Out",
+
                       danger: true,
                     },
                   ]

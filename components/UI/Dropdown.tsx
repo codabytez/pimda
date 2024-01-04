@@ -1,16 +1,34 @@
 // components/Dropdown.tsx
-import { ArrowDown2, MessageQuestion } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { useEffect, useRef, useState } from "react";
 
 const Dropdown: React.FC<DropdownProps> = ({ title, items, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const closeDropdown = () => {
     setIsOpen(false);
   };
 
   return (
-    <div className="relative inline-block text-left" onBlur={closeDropdown}>
+    <div ref={dropdownRef} className="relative inline-block text-left">
       <div>
         <button
           type="button"
@@ -27,27 +45,26 @@ const Dropdown: React.FC<DropdownProps> = ({ title, items, icon }) => {
       </div>
 
       {isOpen && (
-        <div className="origin-top-right absolute z-30 right-0 mt-3 w-32 rounded shadow-lg bg-black/5 backdrop-blur-[75px] ring-1 ring-black ring-opacity-5">
+        <div
+          className="origin-top-right absolute z-30 right-0 mt-3 w-32 rounded shadow-lg bg-black/5 backdrop-blur-[75px] ring-1 ring-black ring-opacity-5"
+          onBlur={closeDropdown}
+        >
           <div className="flex w-32 flex-col items-start transform duration-300 transition-all ease-in-out">
             {items.map((item, index) => (
               <a
                 key={index}
-                href="#"
+                href={item.href ? item.href : "#"}
                 className="flex pl-2 items-center gap-2 py-2 w-full hover:bg-primary-4"
-                onClick={closeDropdown}
+                onClick={() => closeDropdown()}
               >
-                <span>
-                  {typeof item === "object" && item?.icon ? item?.icon : ""}
-                </span>
+                <span>{item?.icon ? item?.icon : ""}</span>
 
                 <span
                   className={`${
-                    typeof item === "object" && item?.danger
-                      ? "text-secondary-2"
-                      : "text-gray-1"
+                    item?.danger ? "text-secondary-2" : "text-gray-1"
                   } text-Text-sm`}
                 >
-                  {typeof item === "object" && item?.label ? item?.label : ""}
+                  {item?.label ? item?.label : ""}
                 </span>
               </a>
             ))}

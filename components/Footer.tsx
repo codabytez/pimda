@@ -1,5 +1,6 @@
-import { Copyright, Send } from "iconsax-react";
+import { Apple, Copyright, GooglePlay, Send } from "iconsax-react";
 import React from "react";
+import { Input } from "./UI/Input";
 import playstore from "@/public/images/play-app-store-label-logo.png";
 import appstore from "@/public/images/download-appstore.png";
 import Image from "next/image";
@@ -10,7 +11,6 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import { Input } from "./UI/Input";
 
 const Footer: React.FC = () => (
   <footer className="bg-primary-green-600">
@@ -27,23 +27,19 @@ const Footer: React.FC = () => (
 
               <div className="flex items-center gap-2 w-[194px]">
                 <div className="flex flex-col items-start gap-2 flex-1">
-                  <div className="w-[192px] h-10 flex">
-                    <Image
-                      src={playstore}
-                      width={104}
-                      height={30}
-                      alt="playstore"
-                      className="h-full object-cover"
+                  <div className="w-[192px] flex items-start justify-start">
+                    <MobileAppStoreBadge
+                      store="GooglePlay"
+                      variant="Black"
+                      size="Large"
                     />
                   </div>
 
-                  <div className="w-[192px] h-10 flex">
-                    <Image
-                      src={appstore}
-                      width={104}
-                      height={30}
-                      alt="appstore"
-                      className="h-full object-cover"
+                  <div className="w-[192px] flex items-start justify-start">
+                    <MobileAppStoreBadge
+                      store="Appstore"
+                      variant="Black"
+                      size="Large"
                     />
                   </div>
                 </div>
@@ -132,7 +128,7 @@ const Footer: React.FC = () => (
             <Link href="#" className="text-white text-Text-md">
               FAQ
             </Link>
-            <Link href="#" className="text-white text-Text-md">
+            <Link href="/contact" className="text-white text-Text-md">
               Contact
             </Link>
           </div>
@@ -173,3 +169,22 @@ const Footer: React.FC = () => (
 );
 
 export default Footer;
+
+type Variant = "Black" | "White" | "Ghost";
+type Size = "Small" | "Large";
+type Store = "GooglePlay" | "Appstore";
+
+const MobileAppStoreBadge: React.FC<{
+  store: Store;
+  variant: Variant;
+  size: Size;
+}> = ({ variant, size, store }) => {
+  return (
+    <Image
+      src={`/images/Type=${variant}BackgroundDigitalStore=${store}Size=${size}.svg`}
+      alt={variant}
+      width={size === "Small" ? 122 : 189}
+      height={size === "Small" ? 36 : 56}
+    />
+  );
+};

@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+import React from "react";
 import Link from "next/link";
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,26 +17,23 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const variantClasses = {
     primary:
-      "bg-green-500 text-white hover:bg-green-600 focus:bg-green-700 active:bg-green-800 disabled:bg-gray-200 disabled:cursor-not-allowed",
+      "bg-primary-5 text-black hover:bg-primary-1 focus:bg-sky-blue/80 active:bg-sky-blue disabled:bg-gray-300 disabled:cursor-not-allowed",
     secondary:
-      "bg-white text-green-500 hover:bg-gray-100 focus:shadow-green-200 active:bg-green-300 disabled:bg-gray-200 border-solid border-2 border-green-500",
-    success:
-      "bg-green-400 hover:bg-green-500 focus:bg-green-600 active:bg-green-700 disabled:bg-gray-200 disabled:cursor-not-allowed",
+      "bg-white text-primary-5 border-[1.5px] border-primary-5 hover:bg-primary-10 hover:text-primary-1 focus:border-2 focus:border-sky-blue focus:bg-primary-7 focus:text-sky-blue disabled:border-2 disabled:border-gray-100 disabled:text-gray-400",
     tertiary:
-      "bg-green-200 text-green-500 hover:bg-gray-100 focus:shadow-green-200 active:bg-green-300 disabled:bg-gray-200 disabled:cursor-not-allowed",
-    error:
-      "bg-red-500 text-white hover:bg-red-600 focus:bg-red-700 active:bg-red-800 disabled:bg-gray-200 disabled:cursor-not-allowed",
+      "bg-transparent border border-primary-5 text-primary-5 hover:bg-primary-10/50 hover:text-primary-1 focus:border-2 focus:border-sky-blue focus:bg-primary-7/50 focus:text-sky-blue disabled:border-2 disabled:border-gray-100 disabled:text-gray-400",
+    text: "bg-transparent text-primary-5 hover:text-primary-1 focus:text-sky-blue disabled:text-gray-400",
   };
 
   const sizeClasses = {
-    sm: "text-sm py-2",
-    md: "text-base py-3",
-    lg: "text-lg py-4",
+    sm: "text-Text-xs py-2 px-3",
+    md: "text-Text-sm p-3",
+    lg: "text-Text-md p-4",
   };
 
-  const classNames = `relative px-4 py-3 flex items-center justify-center gap-5 ${
+  const classNames = `relative flex items-center justify-center gap-5 ${
     fullWidth ? "w-full" : "w-max"
-  } h-auto rounded-md font-sans ${variantClasses[variant]} ${
+  } h-auto rounded-lg font-sans ${variantClasses[variant]} ${
     sizeClasses[size]
   }`;
 
@@ -58,6 +55,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       <div className="w-full h-full absolute top-0 flex flex-col items-center justify-center">
         <svg
+          data-testid="spinner"
           width={spinnerSize ?? "20"}
           height={spinnerSize ?? "20"}
           viewBox="0 0 24 24"

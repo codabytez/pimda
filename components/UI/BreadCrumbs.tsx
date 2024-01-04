@@ -18,7 +18,7 @@ const BreadCrumbs = ({
   const pathNames = paths.split("/").filter((path) => path);
 
   return (
-    <div>
+    <section className="max-w-[1170px] mx-auto mb-20">
       <ul className={containerClasses}>
         <li className={listClasses}>
           <Link href={"/"}>{homeElement}</Link>
@@ -41,7 +41,7 @@ const BreadCrumbs = ({
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

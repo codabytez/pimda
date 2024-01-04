@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "category-5": "0px 1px 13px 0px rgba(0, 0, 0, 0.05)",
+        "category-20": "0px 2px 10px 2px rgba(0, 0, 0, 0.20)",
+        shaf: "0px 1px 13px 0px rgba(0, 0, 0, 0.05)",
+      },
       colors: {
         primary: {
           "1": "#00BED7",
@@ -48,7 +53,13 @@ const config: Config = {
         "dark-gray": "#0F0F0F",
         "dirty-green": "#A0B570",
         "lemon-green": "#EEFF61",
+        text: "#FAFAFA",
         "sky-blue": "#1E97C6",
+      },
+
+      fontFamily: {
+        inter: "var(--font-inter)",
+        poppins: "var(--font-poppins)",
       },
       fontSize: {
         "Text-xs": [

@@ -5,7 +5,7 @@ const variantClasses = {
   default: "border-solid border border-white text-white",
   primary:
     "border-solid border-dark-gray border focus-within:text-dark-gray text-dark-gray",
-  secondary: "border-0 bg-secondary-1 text-dark-gray",
+  secondary: "border-0 !bg-secondary-1 text-dark-gray",
   tertiary: "border-0 text-white",
 };
 
@@ -42,7 +42,7 @@ export function SelectInput({
 
   return (
     <div
-      className={`relative px-4 py-3 flex items-center justify-center gap-2 ${
+      className={`relative px-4 py-3 flex items-center justify-center ${
         fullWidth ? "w-full" : "w-fit"
       } h-[48px] rounded-[10px] font-manropeL text-dark-100 hide-caret transition-all select-none focus-within:border-brand-green-primary ${classNames}  ${
         disabled && "bg-[#A5B4FC] opacity-[.8] border-[1px] cursor-not-allowed"
@@ -51,7 +51,7 @@ export function SelectInput({
       {leftIcon && <div className="absolute top-2.5 left-2">{leftIcon}</div>}
       <select
         onChange={onChange}
-        className={`w-full pr-2 border-none outline-none bg-transparent hide-caret mr-3 ${
+        className={`w-full border-none outline-none bg-transparent hide-caret ${
           leftIcon ? "pl-7" : ""
         } ${disabled ? "cursor-not-allowed" : ""}}`}
         {...(props as any)}
@@ -73,7 +73,7 @@ export function SelectInput({
         height={caretSize ?? "30"}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-3 right-5"
+        className=" top-3 right-5"
       >
         <path
           fill={caretColor ?? "#7777"}
@@ -111,12 +111,15 @@ export function Input({
     <div
       className={`relative px-4 py-3 flex items-center justify-center gap-3 ${
         fullWidth ? "w-full" : "w-fit"
-      } ${inputType === "input" ? "h-[48px]" : "h-[120px]"}
+      }
        rounded-[10px] font-manropeL text-dark-100 hide-caret transition-all select-none focus-within:border-brand-green-primary ${classNames} ${
         disabled ?? isLoading
           ? "bg-[#A5B4FC] opacity-[.8] border-[1px] cursor-not-allowed"
           : "bg-transparent"
       }`}
+      style={{
+        height: inputType === "input" ? "48px" : rows ? `${rows}px` : "120px",
+      }}
     >
       {leftIcon && leftIcon}
       {inputType === "input" ? (
@@ -135,14 +138,17 @@ export function Input({
       ) : (
         <textarea
           onChange={onChange}
-          className={`w-full outline-none hide-caret resize-none h-[${
-            rows || 60
-          }px] ${
-            disabled ?? isLoading ? "cursor-not-allowed bg-[#A5B4FC]" : ""
+          className={`w-full outline-none hide-caret resize-none ${
+            disabled ?? isLoading
+              ? "cursor-not-allowed bg-[#A5B4FC]"
+              : "bg-transparent"
           } ${leftIcon ? "pl-1" : ""} `}
           placeholder={placeholder ?? "placeholder"}
           disabled={isLoading ?? disabled}
           {...props}
+          style={{
+            height: rows ? `${rows - 32}px` : "100px",
+          }}
         />
       )}
       <style jsx>{`
@@ -151,7 +157,7 @@ export function Input({
         input:-webkit-autofill:focus,
         input:-webkit-autofill:active {
           -webkit-background-clip: text;
-          -webkit-text-fill-color: ${variant === "primary" ? "#000" : "#fff"};
+          -webkit-text-fill-color: ${variant === "default" ? "#fff" : "#000"};
           //this transition actually does nothing, its a fallback for older chrome browswers
           transition: background-color 5000s ease-in-out 0s;
           box-shadow: inset 0 0 20px 20px transparent;

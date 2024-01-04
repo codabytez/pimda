@@ -1,4 +1,5 @@
 // components/Toast.tsx
+"use client";
 import {
   toast,
   ToastOptions,
@@ -7,7 +8,7 @@ import {
   Theme,
 } from "react-toastify";
 
-const Toast: React.FC<ToastProps> = ({
+export const notify: React.FC<ToastProps> = ({
   message,
   position = "top-right",
   autoClose = 5000,
@@ -16,7 +17,7 @@ const Toast: React.FC<ToastProps> = ({
   pauseOnHover = true,
   draggable = true,
   progress = undefined,
-  type = "default",
+  type = "success",
   theme = "dark",
 }) => {
   toast(message, {
@@ -34,4 +35,5 @@ const Toast: React.FC<ToastProps> = ({
   return null;
 };
 
-export default Toast;
+export const fetchErrorToast = (data: string) =>
+  notify({ type: "error", message: `Error fetching ${data}`, theme: "light" });
