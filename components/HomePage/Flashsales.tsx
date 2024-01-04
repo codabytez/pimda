@@ -77,7 +77,7 @@ const Flashsales: React.FC = () => {
             Flash Sales
           </h4>
           <ClientOnly>
-            <Countdown endTime={new Date("2024-01-04T00:00:00")} />
+            <Countdown endTime={new Date("2024-01-31T00:00:00")} />
           </ClientOnly>
         </div>
         <Button

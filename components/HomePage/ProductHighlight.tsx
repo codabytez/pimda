@@ -56,7 +56,7 @@ const ProductHighlight: React.FC = () => {
         </h2>
         <ClientOnly>
           <Countdown
-            endTime={new Date("2024-01-04T00:00:00")}
+            endTime={new Date("2024-01-31T00:00:00")}
             style={{ timeAboveLabel: true, rounded: true, noSeparator: true }}
           />
         </ClientOnly>
