@@ -1,7 +1,7 @@
-import React from "react";
+import { NextPage } from "next";
 import Link from "next/link";
 
-const Button: React.FC<ButtonProps> = ({
+const Button: NextPage<ButtonProps> = ({
   children,
   isLoading,
   disabled,
@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
   spinnerSize,
   variant = "primary",
   size = "md",
-  fullWidth = false,
+  width,
   ...props
 }) => {
   const variantClasses = {
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     secondary:
       "bg-white text-primary-5 border-[1.5px] border-primary-5 hover:bg-primary-10 hover:text-primary-1 focus:border-2 focus:border-sky-blue focus:bg-primary-7 focus:text-sky-blue disabled:border-2 disabled:border-gray-100 disabled:text-gray-400",
     tertiary:
-      "bg-transparent border border-primary-5 text-primary-5 hover:bg-primary-10/50 hover:text-primary-1 focus:border-2 focus:border-sky-blue focus:bg-primary-7/50 focus:text-sky-blue disabled:border-2 disabled:border-gray-100 disabled:text-gray-400",
+      "bg-transparent border border-gray-2 text-gray-2 font-semibold hover:bg-primary-10/50 hover:text-primary-1 focus:border-2 focus:border-sky-blue focus:bg-primary-7/50 focus:text-sky-blue disabled:border-2 disabled:border-gray-100 disabled:text-gray-400",
     text: "bg-transparent text-primary-5 hover:text-primary-1 focus:text-sky-blue disabled:text-gray-400",
   };
 
@@ -31,15 +31,18 @@ const Button: React.FC<ButtonProps> = ({
     lg: "text-Text-md p-4",
   };
 
-  const classNames = `relative flex items-center justify-center gap-5 ${
-    fullWidth ? "w-full" : "w-max"
-  } h-auto rounded-lg font-sans ${variantClasses[variant]} ${
-    sizeClasses[size]
-  }`;
+  const classNames = `transition-all relative flex items-center justify-center gap-5 h-auto rounded-lg font-sans ${variantClasses[variant]} ${sizeClasses[size]}`;
 
   if (href) {
     return (
-      <Link className={classNames} {...props} href={href}>
+      <Link
+        className={classNames}
+        {...props}
+        href={href}
+        style={{
+          width: width ? width : "auto",
+        }}
+      >
         {leftIcon && leftIcon}
         {children}
         {rightIcon && rightIcon}
@@ -52,6 +55,9 @@ const Button: React.FC<ButtonProps> = ({
       disabled={(isLoading ?? disabled) || disabled}
       className={classNames}
       {...props}
+      style={{
+        width: width ? width : "auto",
+      }}
     >
       <div className="w-full h-full absolute top-0 flex flex-col items-center justify-center">
         <svg

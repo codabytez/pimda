@@ -1,5 +1,4 @@
 import { Apple, Copyright, GooglePlay, Send } from "iconsax-react";
-import React from "react";
 import { Input } from "./UI/Input";
 import playstore from "@/public/images/play-app-store-label-logo.png";
 import appstore from "@/public/images/download-appstore.png";
@@ -11,8 +10,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
+import { NextPage } from "next";
 
-const Footer: React.FC = () => (
+const Footer: NextPage = () => (
   <footer className="bg-primary-green-600">
     <div className="flex max-w-[1440px] h-[440px] m-auto pt-20 pb-6 flex-col justify-end items-center gap-24">
       <div className="flex items-start gap-12">

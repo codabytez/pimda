@@ -1,10 +1,10 @@
 import Image from "next/image";
-import React from "react";
 import delivery from "@/public/images/icons/icon-delivery.svg";
 import customerService from "@/public/images/icons/icon-customer-service.svg";
 import secure from "@/public/images/icons/icon-secure.svg";
+import { NextPage } from "next";
 
-const Services: React.FC = () => {
+const Services: NextPage = () => {
   return (
     <div className="flex justify-center items-stretch gap-[88px] max-w-[1440px] mx-auto">
       <Service

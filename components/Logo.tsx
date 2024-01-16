@@ -1,6 +1,6 @@
-import React from "react";
+import { NextPage } from "next";
 
-const Logo: React.FC<{ fill?: string }> = ({ fill }) => {
+const Logo: NextPage<{ fill?: string }> = ({ fill }) => {
   return (
     <svg
       width="100"

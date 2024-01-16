@@ -1,8 +1,9 @@
 // components/Dropdown.tsx
 import { ArrowDown2 } from "iconsax-react";
+import { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 
-const Dropdown: React.FC<DropdownProps> = ({ title, items, icon }) => {
+const Dropdown: NextPage<DropdownProps> = ({ title, items, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -55,7 +56,12 @@ const Dropdown: React.FC<DropdownProps> = ({ title, items, icon }) => {
                 key={index}
                 href={item.href ? item.href : "#"}
                 className="flex pl-2 items-center gap-2 py-2 w-full hover:bg-primary-4"
-                onClick={() => closeDropdown()}
+                onClick={() => {
+                  closeDropdown();
+                  if (item.onClick) {
+                    item.onClick();
+                  }
+                }}
               >
                 <span>{item?.icon ? item?.icon : ""}</span>
 

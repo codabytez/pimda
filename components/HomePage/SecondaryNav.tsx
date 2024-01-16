@@ -1,8 +1,8 @@
-import React from "react";
+import { NextPage } from "next";
 
-const SecondaryNav: React.FC = () => {
+const SecondaryNav: NextPage = () => {
   return (
-    <div className="flex justify-center items-center gap-4 pb-3">
+    <div className="flex justify-center items-center gap-4 p-3 bg-gray-10 w-full">
       <div className="flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,18 +1,13 @@
-import Contact from "@/components/Contact";
-import { Metadata } from "next";
-import React from "react";
+import Contact from "@/components/ContactPage/Contact";
+import { Metadata, NextPage } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact page",
 };
 
-const ContactPage: React.FC = () => {
-  return (
-    <main className="max-w-[1440px] mt-[200px] mb-28">
-      <Contact />;
-    </main>
-  );
+const ContactPage: NextPage = () => {
+  return <Contact />;
 };
 
 export default ContactPage;

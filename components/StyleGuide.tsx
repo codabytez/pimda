@@ -7,6 +7,7 @@ import Cart from "@/components/UI/Cart";
 import { notify, fetchErrorToast } from "@/components/UI/Toast";
 import { Clipboard } from "iconsax-react";
 import BreadCrumbs from "@/components/UI/BreadCrumbs";
+import { NextPage } from "next";
 
 const buttonCode = `
 // import Button from "@/components/UI/Button";
@@ -21,7 +22,7 @@ size="md" // 'sm', 'md', 'lg'
 // spinnerColor or spinnerSize only works when isLoading is true
 // leftIcon={<Android />} or any other icon
 // rightIcon={<Clipboard />} or any other icon
-// fullWidth={false} // if true, the button will take the full width of the parent
+// width="200px" // if width is provided, the button will be rendered with the width
 
 >
   Button
@@ -40,7 +41,7 @@ const inputCode = `
     // rightIcon={<Clipboard />} or any other icon
     variant="primary" // 'default', 'primary'
     // inputSize="md" // 'sm', 'md', 'lg'
-    // fullWidth // true, false
+    // width="200px" // if width is provided, the input will be rendered with the width
     />`;
 
 const selectInputCode = `
@@ -59,7 +60,7 @@ const selectInputCode = `
     // rightIcon={<Clipboard />} or any other icon
     variant="primary" // 'default', 'primary'
     // inputSize="md" // 'sm', 'md', 'lg'
-    // fullWidth // true, false
+    // width="500px" // if width is provided, the input will be rendered with the width
     />`;
 
 const cartCode = `
@@ -100,7 +101,7 @@ function handleCopy(code: string) {
   }
 }
 
-export default function StyleGuide() {
+const StyleGuide: NextPage =() => {
   return (
     <>
       <BreadCrumbs
@@ -240,3 +241,5 @@ export default function StyleGuide() {
     </>
   );
 }
+
+export default StyleGuide;

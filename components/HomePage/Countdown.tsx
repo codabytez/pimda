@@ -1,7 +1,8 @@
 "use client";
+import { NextPage } from "next";
 import React, { useState, useEffect } from "react";
 
-const Countdown: React.FC<CountdownProps> = ({ endTime, style = {} }) => {
+const Countdown: NextPage<CountdownProps> = ({ endTime, style = {} }) => {
   const calculateTimeLeft = () => {
     const difference = +endTime - +new Date();
     let timeLeft = { days: "00", hours: "00", minutes: "00", seconds: "00" };

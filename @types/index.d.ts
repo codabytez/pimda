@@ -10,7 +10,7 @@ interface CountdownProps {
 }
 
 interface NavbarProps {
-  isLoggedIn: boolean;
+  // isLoggedIn: boolean;
   savedItemsCount: number;
   cartItemsCount: number;
 }
@@ -54,8 +54,8 @@ interface whyusProps {
 // Components / UI Types
 
 interface BreadCrumbProps {
-  homeElement: ReactNode;
-  separator: ReactNode;
+  homeElement?: ReactNode;
+  separator?: ReactNode;
   containerClasses?: string;
   listClasses?: string;
   activeClasses?: string;
@@ -77,7 +77,7 @@ interface ButtonProps
   spinnerSize?: string | number;
   variant?: "primary" | "secondary" | "tertiary" | "text";
   size?: "sm" | "md" | "lg";
-  fullWidth?: boolean;
+  width?: string;
 }
 
 interface itemProps {
@@ -99,6 +99,17 @@ interface CartProps {
   isRed?: boolean;
   isFavorite?: boolean;
   ratingPosition?: "side" | "below";
+  wishlist?: boolean;
+  recentlyViewed?: boolean;
+}
+
+interface CartItemProps {
+  productName: string;
+  productImage: string;
+  price: number;
+  quantity: number;
+  setQuantity?: (index: number, value: number) => void;
+  index: number;
 }
 
 // Navbar dropdown
@@ -109,6 +120,7 @@ interface DropdownProps {
     icon?: React.ReactNode;
     label: string;
     href?: string;
+    onClick?: () => void;
     danger?: boolean;
   }>;
 }
@@ -141,7 +153,7 @@ interface SelectInputProps extends SelectHTMLAttributes<HTMLSelectElement> {
   optionColor?: string;
   variant?: Variant;
   inputSize?: Size;
-  fullWidth?: boolean;
+  width?: string;
 }
 
 interface TextInputProps {
@@ -158,8 +170,9 @@ interface TextInputProps {
   variant?: Variant;
   inputSize?: Size;
   inputType?: "input" | "textarea";
-  fullWidth?: boolean;
+  width?: string;
   rows?: number;
+  label?: string;
 }
 
 interface StarProps {

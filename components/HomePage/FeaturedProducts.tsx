@@ -8,8 +8,9 @@ import dry_dog_food from "@/public/images/products/breed-dry-dog-food.png";
 import canon_camera from "@/public/images/products/canon-camera.png";
 import asus_laptop from "@/public/images/products/asus-fnd-laptop.png";
 import curology_product_set from "@/public/images/products/curology-product-set.png";
+import { NextPage } from "next";
 
-const FeaturedProducts: React.FC = () => {
+const FeaturedProducts: NextPage = () => {
   const featuredProducts: itemProps[] = [
     {
       name: "Kids Electric Car",

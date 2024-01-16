@@ -1,5 +1,4 @@
-import React from "react";
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 import About from "@/components/AboutPage/About";
 
 export const metadata: Metadata = {
@@ -7,12 +6,8 @@ export const metadata: Metadata = {
   description: "More info about Pimda",
 };
 
-const AboutPage: React.FC = () => {
-  return (
-    <main className="mt-[150px] mb-28">
-      <About />
-    </main>
-  );
+const AboutPage: NextPage = () => {
+  return <About />;
 };
 
 export default AboutPage;

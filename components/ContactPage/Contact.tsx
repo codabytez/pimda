@@ -1,14 +1,14 @@
 import { Call } from "iconsax-react";
-import React from "react";
-import { Input } from "./UI/Input";
-import Button from "./UI/Button";
-import BreadCrumbs from "./UI/BreadCrumbs";
+import { Input } from "../UI/Input";
+import Button from "../UI/Button";
+import BreadCrumbs from "../UI/BreadCrumbs";
+import { NextPage } from "next";
 
-const Contact: React.FC = () => {
+const Contact: NextPage = () => {
   return (
     <>
       <BreadCrumbs
-        homeElement={"Home"}
+        homeElement="Home"
         separator={<span className="w-[1px] h-4 flex bg-black/50 rotate-12" />}
         activeClasses="!text-black"
         containerClasses="flex items-end h-6 gap-2 text-Text-sm my-5"
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
               variant="secondary"
               rows={207}
               inputType="textarea"
-              fullWidth
+              width="100%"
             />
 
             <Button>Send Message</Button>

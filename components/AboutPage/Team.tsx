@@ -1,9 +1,9 @@
+import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaXTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
-const Team: React.FC = () => {
+const Team: NextPage = () => {
   return (
     <section className="flex items-stretch justify-center gap-[30px] max-w-[1440px] mx-auto mb-28">
       <TeamMember

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Input, SelectInput } from "./UI/Input";
 import Button from "./UI/Button";
 import {
@@ -16,12 +15,20 @@ import {
 } from "iconsax-react";
 import Dropdown from "./UI/Dropdown";
 import Logo from "./Logo";
+import { NextPage } from "next";
+import { useState } from "react";
 
-const Navbar: React.FC<NavbarProps> = ({
-  isLoggedIn,
-  savedItemsCount,
-  cartItemsCount,
-}) => {
+const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogIn = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogOut = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className="bg-white fixed flex flex-col justify-center items-center w-full top-0 left-0 z-50 m-auto">
       <div className="bg-primary-green-600 w-full flex items-center justify-center p-2">
@@ -58,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({
             type="text"
             placeholder="Search products, brands and categories"
             leftIcon={<SearchNormal1 color="#292D32" />}
-            fullWidth
+            width="100%"
           />
           <Button size="lg">Search</Button>
         </form>
@@ -126,11 +133,14 @@ const Navbar: React.FC<NavbarProps> = ({
                     {
                       icon: <Star1 color="#323234" />,
                       label: "My Wishlist",
+                      href: "/wishlist",
                     },
                     {
                       icon: <LogoutCurve color="#B90000" />,
                       label: "Sign Out",
-
+                      onClick() {
+                        handleLogOut();
+                      },
                       danger: true,
                     },
                   ]
@@ -138,10 +148,14 @@ const Navbar: React.FC<NavbarProps> = ({
                     {
                       icon: <LoginCurve color="#323234" />,
                       label: "Sign In",
+                      onClick() {
+                        handleLogIn();
+                      },
                     },
                     {
                       icon: <ProfileAdd color="#323234" />,
                       label: "Sign Up",
+                      href: "/auth/signup",
                     },
                     {
                       icon: <Star1 color="#323234" />,

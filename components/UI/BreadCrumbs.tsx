@@ -1,19 +1,18 @@
 // /components/BreadCrumbs.tsx
 "use client";
-
-import React from "react";
-
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { NextPage } from "next";
+import React from "react";
 
-const BreadCrumbs = ({
-  homeElement,
-  separator,
-  containerClasses,
-  listClasses,
-  activeClasses,
-  capitalizeLinks,
-}: BreadCrumbProps) => {
+const BreadCrumbs: NextPage<BreadCrumbProps> = ({
+  homeElement = "Home",
+  separator = <span className="w-[1px] h-4 flex bg-black/50 rotate-12" />,
+  activeClasses = "!text-black",
+  containerClasses = "flex items-end h-6 gap-2 text-Text-sm my-5",
+  listClasses = "text-black/50 capitalize hover:text-black transition-colors duration-300",
+  capitalizeLinks = true,
+}) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
 

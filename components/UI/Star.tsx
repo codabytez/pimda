@@ -1,7 +1,7 @@
 // Star.tsx
-import React from "react";
+import { NextPage } from "next";
 
-const Star: React.FC<StarProps> = ({ fill }) => {
+const Star: NextPage<StarProps> = ({ fill }) => {
   let fillValue = "#FFAD33";
   let strokeValue = "none";
   let opacityValue = 1;

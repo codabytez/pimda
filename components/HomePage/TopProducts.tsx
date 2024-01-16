@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowCircleLeft, ArrowCircleRight } from "iconsax-react";
 import Button from "../UI/Button";
+import { NextPage } from "next";
 
 const products: topProduct[] = [
   {
@@ -33,7 +34,7 @@ const products: topProduct[] = [
   },
 ];
 
-const TopProducts: React.FC = () => {
+const TopProducts: NextPage = () => {
   const [current, setCurrent] = useState(0);
 
   const nextProduct = () => {
@@ -68,15 +69,13 @@ const TopProducts: React.FC = () => {
               Get 50% discount
             </h5>
           </div>
-          <div className="w-[146px]">
-            <Button
-              href={`/product/${products[current].id}`}
-              fullWidth
-              variant="tertiary"
-            >
-              Buy Now
-            </Button>
-          </div>
+          <Button
+            href={`/product/${products[current].id}`}
+            width="146px"
+            variant="tertiary"
+          >
+            Buy Now
+          </Button>
         </div>
         <div className="w-[263.2px] h-[261.111px] shrink-0 rounded-full opacity-30 bg-gray-10 filter blur-[53px] relative" />
         {/* eslint-disable-next-line @next/next/no-img-element */}

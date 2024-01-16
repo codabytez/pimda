@@ -1,8 +1,8 @@
 // components/StarRating.tsx
-import React from "react";
+import { NextPage } from "next";
 import Star from "./Star";
 
-const StarRating: React.FC<StarRatingProps> = ({ rating, totalRatings }) => (
+const StarRating: NextPage<StarRatingProps> = ({ rating, totalRatings }) => (
   <div className="flex items-center gap-2">
     <div className="flex items-start">
       {[...Array(5)].map((_, i) => {

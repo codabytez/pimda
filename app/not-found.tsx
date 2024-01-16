@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 import Link from "next/link";
 import notFound from "@/public/images/Page-Not-Found.svg";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Page Not Found",
 };
 
-const NotFound = () => {
+const NotFound: NextPage = () => {
   return (
     <>
       <div className=" mt-[200px]">

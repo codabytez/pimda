@@ -1,7 +1,7 @@
-import React from "react";
+import { NextPage } from "next";
 import ProductCategories from "../Categories/ProductCategories";
 
-const HeroCategories: React.FC = () => {
+const HeroCategories: NextPage = () => {
   return (
     // <div className="flex p-4 flex-col flex-1 items-center rounded-lg bg-white">
     <ProductCategories

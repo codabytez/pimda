@@ -1,10 +1,10 @@
-import React from "react";
 import HeroSection from "./HeroSection";
 import WhyUs from "./WhyUs";
 import Team from "./Team";
 import Services from "./Services";
+import { NextPage } from "next";
 
-const About: React.FC = () => {
+const About: NextPage = () => {
   return (
     <>
       <HeroSection />

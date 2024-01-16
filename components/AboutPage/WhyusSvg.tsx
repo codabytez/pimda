@@ -1,6 +1,6 @@
-import React from "react";
+import { NextPage } from "next";
 
-export const Moneybag: React.FC = () => {
+export const Moneybag: NextPage = () => {
   return (
     <svg
       width="40"

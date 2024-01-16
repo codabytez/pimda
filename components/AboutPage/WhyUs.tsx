@@ -1,8 +1,7 @@
-import Image from "next/image";
-import React from "react";
 import { Moneybag, Sale, Shop, ShoppingBag } from "./WhyusSvg";
+import { NextPage } from "next";
 
-const WhyUs: React.FC = () => {
+const WhyUs: NextPage = () => {
   return (
     <section className="max-w-[1440px] flex items-stretch gap-[30px] justify-center mt-28 mb-20 mx-auto">
       <Frame

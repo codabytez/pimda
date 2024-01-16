@@ -1,6 +1,6 @@
-import React from "react";
+import { NextPage } from "next";
 
-const HeroSection: React.FC = () => {
+const HeroSection: NextPage = () => {
   return (
     <section className="flex items-center justify-center h-[609px] w-full">
       <div className="flex flex-col items-end justify-center gap-4 bg-primary-6 h-full basis-5/12">

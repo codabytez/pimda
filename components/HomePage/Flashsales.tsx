@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Countdown from "./Countdown";
 import Button from "../UI/Button";
 import { ArrowRight2 } from "iconsax-react";
@@ -11,8 +10,9 @@ import s_series_chair from "@/public/images/products/s-series-chair.png";
 import canon_camera from "@/public/images/products/canon-camera.png";
 import asus_laptop from "@/public/images/products/asus-fnd-laptop.png";
 import ClientOnly from "../ClientOnly";
+import { NextPage } from "next";
 
-const Flashsales: React.FC = () => {
+const Flashsales: NextPage = () => {
   const flashsales: itemProps[] = [
     {
       name: "HAVIT HV-G92 Gamepad",
@@ -108,24 +108,6 @@ const Flashsales: React.FC = () => {
           border: 10px solid red;
         }
       `}</style>
-
-      {/* <style jsx>{`
-        .flash-scroll {
-          animation: scroll 40s linear 0s infinite;
-          animation-play-state: running;
-          animation-delay: 0s;
-          animation-direction: normal;
-        }
-
-        @keyframes scroll {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-      `}</style> */}
     </section>
   );
 };

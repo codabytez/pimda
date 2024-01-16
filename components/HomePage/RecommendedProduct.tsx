@@ -1,10 +1,10 @@
-import React from "react";
 import bodyLotion from "@/public/images/body-lotion.png";
 import cream from "@/public/images/cream.png";
 import Image from "next/image";
 import Button from "../UI/Button";
+import { NextPage } from "next";
 
-const RecommendedProduct: React.FC = () => {
+const RecommendedProduct: NextPage = () => {
   return (
     <div className="flex flex-col flex-1 justify-center items-center  rounded-lg bg-gray-1 relative overflow-hidden">
       <div className="flex py-2.5 px-3 items-center gap-2.5 bg-[#1B1B1B4D] rounded-[15px] absolute top-0 left-0">
@@ -31,9 +31,7 @@ const RecommendedProduct: React.FC = () => {
           />
         </div>
       </div>
-      <div className="w-[162px]">
-        <Button fullWidth>Buy Now</Button>
-      </div>
+      <Button width="162px">Buy Now</Button>
     </div>
   );
 };

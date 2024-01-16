@@ -1,13 +1,12 @@
-import React from "react";
 import ps5 from "@/public/images/ps5-slim-goedkope-playstation.png";
 import woman_on_hat from "@/public/images/woman-wearing-hat.png";
 import speakers from "@/public/images/amazon-echo.png";
 import perfume from "@/public/images/perfume.png";
 import Image from "next/image";
-import Button from "../UI/Button";
 import Link from "next/link";
+import { NextPage } from "next";
 
-const Collections: React.FC = () => {
+const Collections: NextPage = () => {
   return (
     <section className=" max-w-[1240px] mx-auto my-8 px-[35px] pt-[42px] pb-[97px] rounded-lg bg-gray-9 grid grid-cols-4 gap-8">
       <div className="w-[570px] h-[600px] rounded-lg bg-primary-green-600 col-span-2 row-span-2 flex justify-center items-end shrink-0 relative">

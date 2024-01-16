@@ -1,9 +1,9 @@
-import React from "react";
 import Button from "../UI/Button";
 import { ArrowRight2 } from "iconsax-react";
 import Image from "next/image";
+import { NextPage } from "next";
 
-const Brands: React.FC = () => {
+const Brands: NextPage = () => {
   const brands = [
     "oraimo",
     "tecno",

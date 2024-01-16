@@ -1,12 +1,6 @@
 // components/Toast.tsx
 "use client";
-import {
-  toast,
-  ToastOptions,
-  TypeOptions,
-  ToastPosition,
-  Theme,
-} from "react-toastify";
+import { toast } from "react-toastify";
 
 export const notify: React.FC<ToastProps> = ({
   message,

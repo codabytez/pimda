@@ -3,7 +3,7 @@ import logoIcon from "@/public/logo-icon.svg";
 
 const Loader3: React.FC = () => {
   return (
-    <div className="h-screen w-screen flex justify-center items-center bg-gray-5/40 fixed top-0 left-0 z-[999] overflow-hidden">
+    <div className="h-screen w-screen flex justify-center items-center bg-gray-5 fixed top-0 left-0 z-[999] overflow-hidden">
       {/* eslint-disable @next/next/no-img-element */}
       <img src={logoIcon.src} alt="logo" className="animation" />
 

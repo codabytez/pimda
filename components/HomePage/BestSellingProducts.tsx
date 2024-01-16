@@ -6,8 +6,9 @@ import gucci_bag from "@/public/images/products/Gucci-Savoy-medium-duffle-bag.pn
 import cpu_cooler from "@/public/images/products/cpu-cooler.png";
 import bookshelf from "@/public/images/products/small-bookshelf.png";
 import Cart from "../UI/Cart";
+import { NextPage } from "next";
 
-const BestSellingProducts: React.FC = () => {
+const BestSellingProducts: NextPage = () => {
   const BestSellingProducts: itemProps[] = [
     {
       name: "The north coat",

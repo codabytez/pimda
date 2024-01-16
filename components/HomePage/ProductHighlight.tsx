@@ -4,8 +4,9 @@ import Countdown from "./Countdown";
 import Button from "../UI/Button";
 import ClientOnly from "../ClientOnly";
 import Image from "next/image";
+import { NextPage } from "next";
 
-const ProductHighlight: React.FC = () => {
+const ProductHighlight: NextPage= () => {
   const products: topProduct[] = [
     {
       id: 1,
@@ -60,11 +61,9 @@ const ProductHighlight: React.FC = () => {
             style={{ timeAboveLabel: true, rounded: true, noSeparator: true }}
           />
         </ClientOnly>
-        <div className="w-[180px]">
-          <Button size="lg" fullWidth>
-            Buy Now
-          </Button>
-        </div>
+        <Button size="lg" width="180px">
+          Buy Now
+        </Button>
       </div>
 
       <div className="w-[534.2px] h-[523px] rounded-full opacity-30 bg-[#D9D9D9] filter blur-[126px] "></div>

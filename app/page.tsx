@@ -1,14 +1,16 @@
 import Homepage from "@/components/HomePage/Homepage";
 import SecondaryNav from "@/components/HomePage/SecondaryNav";
-import Image from "next/image";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
-      <main className="bg-gray-10 pt-[170px] pb-28">
+      <div className="bg-gray-10">
         <SecondaryNav />
         <Homepage />
-      </main>
+      </div>
     </>
   );
-}
+};
+
+export default Home;

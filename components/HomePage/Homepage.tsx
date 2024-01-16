@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "./Hero";
 import Brands from "./Brands";
 import Flashsales from "./Flashsales";
@@ -7,8 +6,9 @@ import BestSellingProducts from "./BestSellingProducts";
 import FeaturedProducts from "./FeaturedProducts";
 import Collections from "./Collections";
 import Services from "../AboutPage/Services";
+import { NextPage } from "next";
 
-const Homepage: React.FC = () => {
+const Homepage: NextPage = () => {
   return (
     <>
       <Hero />

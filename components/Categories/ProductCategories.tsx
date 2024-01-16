@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import daily_deals_icon from "@/public/images/icons/daily-deals.svg";
@@ -17,8 +16,9 @@ import farmer_icon from "@/public/images/icons/Farmer.svg";
 import pastries_icon from "@/public/images/icons/Cake.svg";
 import drinks_icon from "@/public/images/icons/Drinks.svg";
 import { More } from "iconsax-react";
+import { NextPage } from "next";
 
-const ProductCategories: React.FC<productCategoriesProps> = ({
+const ProductCategories: NextPage<productCategoriesProps> = ({
   limit,
   showMore,
   className,

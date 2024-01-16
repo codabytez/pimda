@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import { Heart, ShoppingCart } from "iconsax-react";
+import { Heart, ShoppingCart, Trash } from "iconsax-react";
 import StarRating from "./StartRating";
+import { NextPage } from "next";
 
-const Cart: React.FC<CartProps> = ({
+const Cart: NextPage<CartProps> = ({
   item,
   isNew,
   isHot,
@@ -12,6 +13,8 @@ const Cart: React.FC<CartProps> = ({
   isFavorite = true,
   isRed = true,
   ratingPosition = "below",
+  wishlist = false,
+  recentlyViewed = false,
 }) => {
   const [selectedVariant, setSelectedVariant] = useState(
     item.variants ? item.variants[0] : ""
@@ -41,9 +44,13 @@ const Cart: React.FC<CartProps> = ({
             : ""}
         </span>
 
-        {isFavorite && (
+        {!recentlyViewed && isFavorite && (
           <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white flex justify-center items-center transition-all hover:scale-110 cursor-pointer">
-            <Heart color="#0F0F0F" />
+            {wishlist ? (
+              <Trash className="text-[#0F0F0F] hover:text-secondary-2" />
+            ) : (
+              <Heart className="text-[#0F0F0F] hover:text-secondary-2" />
+            )}
           </span>
         )}
         <div className="flex max-w-[190px] justify-center items-center">
@@ -53,7 +60,11 @@ const Cart: React.FC<CartProps> = ({
             className="w-full object-cover"
           />
         </div>
-        <p className="absolute -bottom-0 w-full h-10 justify-center items-center hidden group-hover:flex gap-2 bg-[#99E5Ef] text-[#0F0F0F] p-2 rounded-b transition-all cursor-pointer">
+        <p
+          className={`absolute -bottom-0 w-full h-10 justify-center items-center ${
+            !wishlist && !recentlyViewed ? "hidden group-hover:flex" : "flex"
+          }  gap-2 bg-[#99E5Ef] text-[#0F0F0F] p-2 rounded-b transition-all cursor-pointer`}
+        >
           <ShoppingCart color="#323234" />
           <span className="text-gray-1 text-Text-xs">Add to cart</span>
         </p>
@@ -66,63 +77,68 @@ const Cart: React.FC<CartProps> = ({
           {item.discount ? (
             <div className="flex items-start gap-3">
               <span
-                className={`${
-                  isRed !== false ? "text-red-500" : "text-black/50"
+                className={`font-medium ${
+                  isRed !== false ? "text-red-500" : "text-primary-green-600"
                 }`}
               >
                 ${(item.price - item.price * (item.discount / 100)).toFixed(2)}
               </span>
-              <span className="line-through">${item.price}</span>
+              <span className="line-through text-black/50 font-medium">
+                ${item.price}
+              </span>
             </div>
           ) : (
-            <span>${item.price}</span>
+            <span className="font-medium">${item.price}</span>
           )}
         </div>
 
-        {item.rating && ratingPosition && (
+        {!wishlist && item.rating && ratingPosition && (
           <StarRating
             rating={item.rating}
             totalRatings={item.totalRatings || 0}
           />
         )}
 
-        {item.variants && item.variants.length > 1 && (
-          <div className="flex items-start gap-2">
-            {item.variants.map((variant, index) => (
-              <div
-                key={index}
-                className="inline-flex justify-center items-center rounded-full"
-                style={{
-                  backgroundColor:
-                    selectedVariant === "white"
-                      ? "black"
-                      : variant === selectedVariant
-                      ? "white"
-                      : variant, // set background color based on selection
-                  border: `2px solid ${
-                    variant === "white" ? "black" : variant
-                  }`, // set border color to variant color
-                  width: "24px",
-                  height: "24px",
-                }}
-                onClick={() => {
-                  setSelectedVariant(variant); // set selected variant
-                  setSelectedImage(item.images[index]); // set selected image
-                }}
-              >
-                <span
-                  className="block rounded-full"
+        {!wishlist &&
+          !recentlyViewed &&
+          item.variants &&
+          item.variants.length > 1 && (
+            <div className="flex items-start gap-2">
+              {item.variants.map((variant, index) => (
+                <div
+                  key={index}
+                  className="inline-flex justify-center items-center rounded-full"
                   style={{
                     backgroundColor:
-                      variant === selectedVariant ? variant : "transparent", // set background color based on selection
-                    width: "16px",
-                    height: "16px",
+                      selectedVariant === "white"
+                        ? "black"
+                        : variant === selectedVariant
+                        ? "white"
+                        : variant,
+                    border: `2px solid ${
+                      variant === "white" ? "black" : variant
+                    }`,
+                    width: "24px",
+                    height: "24px",
                   }}
-                />
-              </div>
-            ))}
-          </div>
-        )}
+                  onClick={() => {
+                    setSelectedVariant(variant);
+                    setSelectedImage(item.images[index]);
+                  }}
+                >
+                  <span
+                    className="block rounded-full"
+                    style={{
+                      backgroundColor:
+                        variant === selectedVariant ? variant : "transparent",
+                      width: "16px",
+                      height: "16px",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
       </div>
     </div>
   );
