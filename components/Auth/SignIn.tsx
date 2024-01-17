@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const SignIn: NextPage = () => {
   return (
-    <section className="h-[1024px] bg-[#092427CC] relative overflow-hidden">
+    <section className="h-[1024px] bg-[#092427CC] relative overflow-hidden max-w-[1440px] mt-[150px] mb-28 mx-auto">
       <div className="inline-flex pt-8 px-[75px] h-full flex-col items-center rounded-r-[32px] bg-white relative z-10">
         <div className="flex flex-col items-start gap-8">
           <p className="text-gray-1 text-Display-xs font-semibold">Sign in</p>

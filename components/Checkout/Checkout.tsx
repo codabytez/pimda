@@ -5,7 +5,7 @@ import CheckoutDetails from "./CheckoutDetails";
 
 const Checkout: NextPage = () => {
   return (
-    <div className="pt-10 max-w-[1170px] mx-auto">
+    <div className="max-w-[1170px] mx-auto mt-[200px] pb-28">
       <BreadCrumbs />
       <h3 className="font-medium text-Display-md pb-10">Billing Details</h3>
       <div className="flex justify-between">

@@ -31,7 +31,14 @@ const Collections: NextPage = () => {
       </div>
 
       <div className="w-[570px] h-[284px] rounded-lg bg-primary-green-600  col-span-2 flex justify-end items-center shrink-0 relative">
-        <Image width={432} height={286} src={woman_on_hat} alt="woman on hat" />
+        <div className="inline-flex pt-2 pl-16 justify-end items-center bg-black">
+          <Image
+            width={364}
+            height={276}
+            src={woman_on_hat}
+            alt="woman on hat"
+          />
+        </div>
 
         <div className="flex flex-col items-start justify-center gap-4 absolute bottom-6 left-6">
           <div className="flex flex-col items-start justify-center gap-4">
@@ -52,15 +59,15 @@ const Collections: NextPage = () => {
       </div>
 
       <div className="w-[270px] h-[284px] rounded-lg bg-primary-green-600 flex justify-center items-center shrink-0 relative">
-        <Image width={190} height={221} src={speakers} alt="speakers" />
+        <Image width={140} height={207} src={perfume} alt="perfume" />
 
         <div className="flex flex-col items-start justify-center gap-4 absolute bottom-6 left-6">
           <div className="flex flex-col items-start justify-center gap-4">
             <h4 className="text-text text-Display-xs leading-6 font-semibold">
-              Speakers
+              Perfume
             </h4>
-            <p className="text-text text-Text-sm w-[191px]">
-              Amazon wireless speakers
+            <p className="text-text text-Text-xs w-[191px]">
+              GUCCI INTENSE OUD EDP
             </p>
           </div>
           <Link
@@ -73,15 +80,15 @@ const Collections: NextPage = () => {
       </div>
 
       <div className="w-[270px] h-[284px] rounded-lg bg-primary-green-600 flex justify-center items-center shrink-0 relative">
-        <Image width={190} height={221} src={perfume} alt="perfume" />
+        <Image width={217} height={199} src={speakers} alt="speakers" />
 
         <div className="flex flex-col items-start justify-center gap-4 absolute bottom-6 left-6">
           <div className="flex flex-col items-start justify-center gap-4">
             <h4 className="text-text text-Display-xs leading-6 font-semibold">
-              Perfume
+              Speakers
             </h4>
-            <p className="text-text text-Text-xs w-[191px]">
-              GUCCI INTENSE OUD EDP
+            <p className="text-text text-Text-sm w-[191px]">
+              Amazon wireless speakers
             </p>
           </div>
           <Link

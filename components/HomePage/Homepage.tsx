@@ -7,10 +7,13 @@ import FeaturedProducts from "./FeaturedProducts";
 import Collections from "./Collections";
 import Services from "../AboutPage/Services";
 import { NextPage } from "next";
+import SecondaryNav from "@/components/HomePage/SecondaryNav";
 
 const Homepage: NextPage = () => {
   return (
-    <>
+    <main className="max-w-[1440px] mt-[150px] pb-28 mx-auto">
+      <SecondaryNav />
+
       <Hero />
       <Brands />
       <Flashsales />
@@ -24,7 +27,7 @@ const Homepage: NextPage = () => {
       <section className="pt-20 max-w-[1240px] mx-auto">
         <Services />
       </section>
-    </>
+    </main>
   );
 };
 

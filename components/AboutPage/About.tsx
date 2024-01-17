@@ -6,12 +6,12 @@ import { NextPage } from "next";
 
 const About: NextPage = () => {
   return (
-    <>
+    <main className="max-w-[1440px] mt-[150px] pb-28 mx-auto">
       <HeroSection />
       <WhyUs />
       <Team />
       <Services />
-    </>
+    </main>
   );
 };
 

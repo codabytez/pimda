@@ -34,9 +34,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable} ${poppins.variable}`}>
         <Navbar savedItemsCount={10} cartItemsCount={10} />
-        <main className="max-w-[1440px] mt-[150px] mb-28 mx-auto">
           {children}
-        </main>
+
         <Footer />
         <ToastContainer />
         <SpeedInsights />

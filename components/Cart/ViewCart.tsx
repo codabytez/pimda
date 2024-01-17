@@ -36,7 +36,7 @@ const ViewCart: NextPage = () => {
   };
 
   return (
-    <div className="pt-10 max-w-[1170px] mx-auto">
+    <div className="max-w-[1170px] mx-auto mt-[200px] pb-28">
       <BreadCrumbs />
       <div className="flex flex-col gap-20">
         <CartSection cartItems={cartItems} setQuantity={setQuantity} />
