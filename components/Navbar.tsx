@@ -17,6 +17,7 @@ import Dropdown from "./UI/Dropdown";
 import Logo from "./Logo";
 import { NextPage } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,16 +59,18 @@ const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {
       </div>
 
       <div className="max-w-[1440px] py-4 flex justify-center items-center gap-12">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <form className="flex gap-2 items-center justify-start w-[600px]">
           <Input
             variant="primary"
             type="text"
             placeholder="Search products, brands and categories"
-            leftIcon={<SearchNormal1 color="#292D32" />}
+            leftIcon={<SearchNormal1 size={16} color="#292D32" />}
             width="100%"
           />
-          <Button size="lg">Search</Button>
+          <Button width="106px">Search</Button>
         </form>
         <div className="flex gap-5 items-center justify-start">
           <div className="flex items-center justify-start gap-1">
@@ -84,7 +87,7 @@ const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {
             </span>
           </div>
 
-          <div className="flex items-center justify-start gap-1">
+          <Link href="/cart" className="flex items-center justify-start gap-1">
             <div className="relative">
               {cartItemsCount > 0 && isLoggedIn && (
                 <span className="absolute -top-1.5 -right-1.5 bg-secondary-2 text-white rounded-full min-w-5 min-h-5 flex justify-center items-center text-xs">
@@ -96,7 +99,7 @@ const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {
             <span className="text-Text-md font-medium text-dark-gray">
               Cart
             </span>
-          </div>
+          </Link>
 
           <Dropdown
             icon={<MessageQuestion color="#000" />}

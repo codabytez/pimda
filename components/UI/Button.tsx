@@ -10,6 +10,7 @@ const Button: NextPage<ButtonProps> = ({
   href,
   spinnerColor,
   spinnerSize,
+  onClick,
   variant = "primary",
   size = "md",
   width,
@@ -54,6 +55,7 @@ const Button: NextPage<ButtonProps> = ({
     <button
       disabled={(isLoading ?? disabled) || disabled}
       className={classNames}
+      onClick={onClick}
       {...props}
       style={{
         width: width ? width : "auto",

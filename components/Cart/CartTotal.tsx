@@ -2,8 +2,10 @@ import { NextPage } from "next";
 import Button from "../UI/Button";
 
 const CartTotal: NextPage<{ cartItems: CartItemProps[] }> = ({ cartItems }) => {
-    const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="w-[470px] h-[324px] py-8 px-6 rounded border-2 border-gray-7 flex flex-col gap-6">
@@ -25,7 +27,9 @@ const CartTotal: NextPage<{ cartItems: CartItemProps[] }> = ({ cartItems }) => {
           <p>${subtotal}</p>
         </div>
         <div className="flex justify-center">
-          <Button size="lg">Proceed to Checkout</Button>
+          <Button href="/cart/checkout" size="lg">
+            Proceed to Checkout
+          </Button>
         </div>
       </div>
     </div>

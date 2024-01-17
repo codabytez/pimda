@@ -40,6 +40,7 @@ export default function RootLayout({
         <Footer />
         <ToastContainer />
         <SpeedInsights />
+        <div id="modal-root"></div>
       </body>
     </html>
   );

@@ -78,6 +78,7 @@ interface ButtonProps
   variant?: "primary" | "secondary" | "tertiary" | "text";
   size?: "sm" | "md" | "lg";
   width?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 interface itemProps {
@@ -110,6 +111,12 @@ interface CartItemProps {
   quantity: number;
   setQuantity?: (index: number, value: number) => void;
   index: number;
+}
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
 }
 
 // Navbar dropdown
