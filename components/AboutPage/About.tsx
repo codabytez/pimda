@@ -1,3 +1,4 @@
+import React from "react";
 import HeroSection from "./HeroSection";
 import WhyUs from "./WhyUs";
 import Team from "./Team";

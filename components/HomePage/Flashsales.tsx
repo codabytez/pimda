@@ -1,14 +1,15 @@
 "use client";
+import React from "react";
 import Countdown from "./Countdown";
 import Button from "../UI/Button";
 import { ArrowRight2 } from "iconsax-react";
 import Cart from "../UI/Cart";
-import havit_pad from "@/public/images/products/g92-hv-pad.png";
-import ak_keyboard from "@/public/images/products/ak-900-keyboard.png";
-import lcd_monitor from "@/public/images/products/gaming-monitor.png";
-import s_series_chair from "@/public/images/products/s-series-chair.png";
-import canon_camera from "@/public/images/products/canon-camera.png";
-import asus_laptop from "@/public/images/products/asus-fnd-laptop.png";
+import havitPad from "@/public/images/products/g92-hv-pad.png";
+import akKeyboard from "@/public/images/products/ak-900-keyboard.png";
+import lcdMonitor from "@/public/images/products/gaming-monitor.png";
+import sSeriesChair from "@/public/images/products/s-series-chair.png";
+import canonCamera from "@/public/images/products/canon-camera.png";
+import asusLaptop from "@/public/images/products/asus-fnd-laptop.png";
 import ClientOnly from "../ClientOnly";
 import { NextPage } from "next";
 
@@ -17,7 +18,7 @@ const Flashsales: NextPage = () => {
     {
       name: "HAVIT HV-G92 Gamepad",
       price: 160,
-      images: [havit_pad.src],
+      images: [havitPad.src],
       discount: 40,
       variants: ["red"],
       rating: 5,
@@ -26,7 +27,7 @@ const Flashsales: NextPage = () => {
     {
       name: "AK-900 Wired Keyboard",
       price: 1160,
-      images: [ak_keyboard.src],
+      images: [akKeyboard.src],
       discount: 35,
       rating: 4,
       totalRatings: 75,
@@ -34,7 +35,7 @@ const Flashsales: NextPage = () => {
     {
       name: "IPS LCD Gaming Monitor",
       price: 400,
-      images: [lcd_monitor.src],
+      images: [lcdMonitor.src],
       discount: 30,
       variants: ["black"],
       rating: 5,
@@ -43,7 +44,7 @@ const Flashsales: NextPage = () => {
     {
       name: "S Series Comfort Chair",
       price: 400,
-      images: [s_series_chair.src],
+      images: [sSeriesChair.src],
       discount: 25,
       rating: 4.5,
       totalRatings: 99,
@@ -51,7 +52,7 @@ const Flashsales: NextPage = () => {
     {
       name: "Canon EOS DSLR Camera",
       price: 360,
-      images: [canon_camera.src],
+      images: [canonCamera.src],
       variants: ["black"],
       discount: 30,
       rating: 4,
@@ -61,7 +62,7 @@ const Flashsales: NextPage = () => {
     {
       name: "ASUS FND Gaming Laptop",
       price: 700,
-      images: [asus_laptop.src],
+      images: [asusLaptop.src],
       variants: ["black"],
       discount: 10,
       rating: 5,

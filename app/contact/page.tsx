@@ -1,3 +1,4 @@
+import React from "react";
 import Contact from "@/components/ContactPage/Contact";
 import { Metadata, NextPage } from "next";
 

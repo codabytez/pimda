@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { LiveProvider, LiveEditor, LivePreview } from "react-live";
 import { themes } from "prism-react-renderer";
 import Button from "@/components/UI/Button";
@@ -101,7 +102,7 @@ function handleCopy(code: string) {
   }
 }
 
-const StyleGuide: NextPage =() => {
+const StyleGuide: NextPage = () => {
   return (
     <>
       <BreadCrumbs
@@ -240,6 +241,6 @@ const StyleGuide: NextPage =() => {
       </div>
     </>
   );
-}
+};
 
 export default StyleGuide;

@@ -1,10 +1,11 @@
+import React from "react";
 import { NextPage } from "next";
 import Button from "../UI/Button";
 import { ArrowRight2 } from "iconsax-react";
-import shooter_usb_gamepad from "@/public/images/products/gp11-shooter-gamepad.png";
-import asus_laptop from "@/public/images/products/asus-fnd-laptop.png";
-import lcd_monitor from "@/public/images/products/gaming-monitor.png";
-import ak_keyboard from "@/public/images/products/ak-900-keyboard.png";
+import shooterUsbGamepad from "@/public/images/products/gp11-shooter-gamepad_white.png";
+import asusLaptop from "@/public/images/products/asus-fnd-laptop.png";
+import lcdMonitor from "@/public/images/products/gaming-monitor.png";
+import akKeyboard from "@/public/images/products/ak-900-keyboard.png";
 import Cart from "../UI/Cart";
 
 const RecentlyViewed: NextPage = () => {
@@ -12,15 +13,14 @@ const RecentlyViewed: NextPage = () => {
     {
       name: "Asus FHD Gaming Laptop",
       price: 700,
-      images: [asus_laptop.src],
+      images: [asusLaptop.src],
       rating: 5,
       totalRatings: 325,
     },
     {
       name: "GP11 Shooter USB Gamepad",
       price: 660,
-      images: [shooter_usb_gamepad.src, shooter_usb_gamepad.src],
-      variants: ["#000000", "#082326"],
+      images: [shooterUsbGamepad.src],
       rating: 4.5,
       totalRatings: 55,
       isNew: true,
@@ -28,7 +28,7 @@ const RecentlyViewed: NextPage = () => {
     {
       name: "IPS LCD Gaming Monitor",
       price: 400,
-      images: [lcd_monitor.src],
+      images: [lcdMonitor.src],
       variants: ["black"],
       rating: 5,
       totalRatings: 99,
@@ -36,7 +36,7 @@ const RecentlyViewed: NextPage = () => {
     {
       name: "AK-900 Wired Keyboard",
       price: 1160,
-      images: [ak_keyboard.src],
+      images: [akKeyboard.src],
       rating: 4,
       totalRatings: 75,
     },

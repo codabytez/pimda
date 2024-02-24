@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { NextPage } from "next";
 import CartTotal from "./CartTotal";
 import BreadCrumbs from "../UI/BreadCrumbs";
@@ -38,7 +39,7 @@ const ViewCart: NextPage = () => {
   return (
     <div className="max-w-[1170px] mx-auto mt-[200px] pb-28">
       <BreadCrumbs />
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20 mt-20">
         <CartSection cartItems={cartItems} setQuantity={setQuantity} />
         <CartTotal cartItems={cartItems} />
       </div>

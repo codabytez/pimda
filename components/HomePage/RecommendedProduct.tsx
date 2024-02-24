@@ -1,3 +1,4 @@
+import React from "react";
 import bodyLotion from "@/public/images/body-lotion.png";
 import cream from "@/public/images/cream.png";
 import Image from "next/image";

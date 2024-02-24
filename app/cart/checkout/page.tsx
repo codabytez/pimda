@@ -1,3 +1,4 @@
+import React from "react";
 import Checkout from "@/components/Checkout/Checkout";
 import { NextPage } from "next";
 

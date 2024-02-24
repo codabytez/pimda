@@ -1,12 +1,13 @@
+import React from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,12 +35,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable} ${poppins.variable}`}>
         <Navbar savedItemsCount={10} cartItemsCount={10} />
-          {children}
+        <Providers>{children}</Providers>
 
         <Footer />
         <ToastContainer />
         <SpeedInsights />
-        <div id="modal-root"></div>
+        <div id="modal-root" />
       </body>
     </html>
   );

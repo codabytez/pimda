@@ -1,7 +1,7 @@
 // components/Dropdown.tsx
 import { ArrowDown2 } from "iconsax-react";
 import { NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Dropdown: NextPage<DropdownProps> = ({ title, items, icon }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,3 +1,4 @@
+import React from "react";
 import { Call } from "iconsax-react";
 import { Input } from "../UI/Input";
 import Button from "../UI/Button";
@@ -8,7 +9,7 @@ const Contact: NextPage = () => {
   return (
     <main className="max-w-[1440px] mt-[200px] pb-28 mx-auto">
       <BreadCrumbs />
-      <section className="flex items-stretch gap-7 max-w-[1170px] mx-auto">
+      <section className="flex items-stretch gap-7 max-w-[1170px] mx-auto mt-20">
         <div className="inline-flex pt-10 px-9 pb-[88px] flex-col items-start rounded bg-white shadow-category-5 gap-8">
           <div className="flex flex-col items-start gap-6">
             <div className="flex items-center gap-4">

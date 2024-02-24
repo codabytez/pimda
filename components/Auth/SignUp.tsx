@@ -1,3 +1,4 @@
+import React from "react";
 import { NextPage } from "next";
 import Button from "../UI/Button";
 import { FcGoogle } from "react-icons/fc";

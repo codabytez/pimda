@@ -1,4 +1,5 @@
 // pages/style-guide.tsx
+import React from "react";
 import { Metadata, NextPage } from "next";
 import StyleGuide from "@/components/StyleGuide";
 

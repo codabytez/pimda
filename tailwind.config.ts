@@ -50,6 +50,7 @@ const config: Config = {
         },
         amber: "#FBBC04",
         beige: "#E0C8A4",
+        danger: "#FB1314",
         "dark-gray": "#0F0F0F",
         "dirty-green": "#A0B570",
         "lemon-green": "#EEFF61",

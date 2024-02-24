@@ -1,5 +1,6 @@
+import React from "react";
 import ps5 from "@/public/images/ps5-slim-goedkope-playstation.png";
-import woman_on_hat from "@/public/images/woman-wearing-hat.png";
+import womanOnHat from "@/public/images/woman-wearing-hat.png";
 import speakers from "@/public/images/amazon-echo.png";
 import perfume from "@/public/images/perfume.png";
 import Image from "next/image";
@@ -32,12 +33,7 @@ const Collections: NextPage = () => {
 
       <div className="w-[570px] h-[284px] rounded-lg bg-primary-green-600  col-span-2 flex justify-end items-center shrink-0 relative">
         <div className="inline-flex pt-2 pl-16 justify-end items-center bg-black">
-          <Image
-            width={364}
-            height={276}
-            src={woman_on_hat}
-            alt="woman on hat"
-          />
+          <Image width={364} height={276} src={womanOnHat} alt="woman on hat" />
         </div>
 
         <div className="flex flex-col items-start justify-center gap-4 absolute bottom-6 left-6">

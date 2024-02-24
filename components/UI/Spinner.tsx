@@ -1,3 +1,4 @@
+import React from "react";
 import { NextPage } from "next";
 
 const Spinner: NextPage<SpinnerProps> = ({ color = "text-white" }) => {

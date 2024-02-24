@@ -1,8 +1,8 @@
 "use client";
+import React from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 import { AddCircle, ArrowDown2, ArrowUp2 } from "iconsax-react";
-import { useEffect } from "react";
 
 const CartItem: NextPage<CartItemProps> = ({
   productName,
@@ -13,19 +13,19 @@ const CartItem: NextPage<CartItemProps> = ({
   index,
 }) => {
   const increaseQuantity = () => {
-    setQuantity && setQuantity(index, quantity + 1);
+    if (setQuantity) setQuantity(index, quantity + 1);
   };
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity && setQuantity(index, quantity - 1);
+      if (setQuantity) setQuantity(index, quantity - 1);
     }
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value);
     if (!isNaN(value) && value >= 1) {
-      setQuantity && setQuantity(index, value);
+      if (setQuantity) setQuantity(index, value);
     }
   };
 

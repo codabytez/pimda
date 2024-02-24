@@ -1,5 +1,6 @@
 // components/Toast.tsx
 "use client";
+import React from "react";
 import { toast } from "react-toastify";
 
 export const notify: React.FC<ToastProps> = ({

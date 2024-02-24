@@ -1,7 +1,6 @@
-import { Apple, Copyright, GooglePlay, Send } from "iconsax-react";
+import React from "react";
+import { Copyright, Send } from "iconsax-react";
 import { Input } from "./UI/Input";
-import playstore from "@/public/images/play-app-store-label-logo.png";
-import appstore from "@/public/images/download-appstore.png";
 import Image from "next/image";
 import Link from "next/link";
 import {

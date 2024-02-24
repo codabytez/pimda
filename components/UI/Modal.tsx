@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 export const Modal: NextPage<ModalProps> = ({ isOpen, onClose, children }) => {

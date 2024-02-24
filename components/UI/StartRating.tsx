@@ -1,4 +1,5 @@
 // components/StarRating.tsx
+import React from "react";
 import { NextPage } from "next";
 import Star from "./Star";
 

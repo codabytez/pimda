@@ -1,9 +1,10 @@
+import React from "react";
 import { NextPage } from "next";
 import Button from "../UI/Button";
-import north_coat from "@/public/images/products/The-North-Face-x-Gucci-coat.png";
-import gucci_bag from "@/public/images/products/Gucci-Savoy-medium-duffle-bag.png";
-import cpu_cooler from "@/public/images/products/cpu-cooler.png";
-import havit_pad from "@/public/images/products/g92-hv-pad.png";
+import northCoat from "@/public/images/products/The-North-Face-x-Gucci-coat.png";
+import gucciBag from "@/public/images/products/Gucci-Savoy-medium-duffle-bag.png";
+import cpuCooler from "@/public/images/products/cpu-cooler.png";
+import havitPad from "@/public/images/products/g92-hv-pad.png";
 import Cart from "../UI/Cart";
 
 const WishlistProducts: NextPage = () => {
@@ -11,7 +12,7 @@ const WishlistProducts: NextPage = () => {
     {
       name: "Gucci duffle bag",
       price: 1160,
-      images: [gucci_bag.src],
+      images: [gucciBag.src],
       discount: 35,
       rating: 4.5,
       totalRatings: 65,
@@ -19,7 +20,7 @@ const WishlistProducts: NextPage = () => {
     {
       name: "RGB liquid CPU cooler",
       price: 170,
-      images: [cpu_cooler.src],
+      images: [cpuCooler.src],
       variants: ["black"],
       rating: 4.5,
       totalRatings: 65,
@@ -27,7 +28,7 @@ const WishlistProducts: NextPage = () => {
     {
       name: "HAVIT HV-G92 Gamepad",
       price: 160,
-      images: [havit_pad.src],
+      images: [havitPad.src],
       variants: ["red"],
       rating: 5,
       totalRatings: 88,
@@ -35,7 +36,7 @@ const WishlistProducts: NextPage = () => {
     {
       name: "The north coat",
       price: 360,
-      images: [north_coat.src],
+      images: [northCoat.src],
       variants: ["red"],
       rating: 5,
       totalRatings: 65,

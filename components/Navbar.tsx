@@ -16,7 +16,7 @@ import {
 import Dropdown from "./UI/Dropdown";
 import Logo from "./Logo";
 import { NextPage } from "next";
-import { useState } from "react";
+import React,{ useState } from "react";
 import Link from "next/link";
 
 const Navbar: NextPage<NavbarProps> = ({ savedItemsCount, cartItemsCount }) => {

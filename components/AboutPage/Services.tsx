@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import delivery from "@/public/images/icons/icon-delivery.svg";
 import customerService from "@/public/images/icons/icon-customer-service.svg";

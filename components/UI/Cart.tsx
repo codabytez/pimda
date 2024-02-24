@@ -9,12 +9,14 @@ const Cart: NextPage<CartProps> = ({
   item,
   isNew,
   isHot,
+  isDraft,
   showDiscount = true,
   isFavorite = true,
   isRed = true,
   ratingPosition = "below",
   wishlist = false,
   recentlyViewed = false,
+  cta,
 }) => {
   const [selectedVariant, setSelectedVariant] = useState(
     item.variants ? item.variants[0] : ""
@@ -24,9 +26,11 @@ const Cart: NextPage<CartProps> = ({
   return (
     <div className="flex flex-col items-start gap-4 w-max">
       <div className="relative flex justify-center items-center w-[270px] h-[250px] rounded-lg bg-secondary-1 group">
-        <span
-          className={`absolute top-3 left-3 py-1 px-3 inline-flex justify-center items-center gap-2.5 rounded text-Text-xs text-secondary-1 ${
-            item.discount && showDiscount
+        <div
+          className={`absolute top-3 left-3 pt-2 pb-1 px-3 flex justify-center items-center rounded  ${
+            isDraft
+              ? "bg-danger"
+              : item.discount && showDiscount
               ? "bg-secondary-2"
               : isNew
               ? "bg-green-500"
@@ -35,21 +39,31 @@ const Cart: NextPage<CartProps> = ({
               : "hidden"
           }`}
         >
-          {item.discount && showDiscount
-            ? `-${item.discount}%`
-            : isNew
-            ? "NEW"
-            : isHot
-            ? "HOT"
-            : ""}
-        </span>
+          <p className="text-Text-xs text-secondary-1">
+            {isDraft
+              ? "Draft"
+              : item.discount && showDiscount
+              ? `-${item.discount}%`
+              : isNew
+              ? "NEW"
+              : isHot
+              ? "HOT"
+              : ""}
+          </p>
+        </div>
 
         {!recentlyViewed && isFavorite && (
           <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white flex justify-center items-center transition-all hover:scale-110 cursor-pointer">
             {wishlist ? (
-              <Trash className="text-[#0F0F0F] hover:text-secondary-2" />
+              <Trash
+                size={20}
+                className="text-[#0F0F0F] hover:text-secondary-2"
+              />
             ) : (
-              <Heart className="text-[#0F0F0F] hover:text-secondary-2" />
+              <Heart
+                size={20}
+                className="text-[#0F0F0F] hover:text-secondary-2"
+              />
             )}
           </span>
         )}
@@ -66,7 +80,9 @@ const Cart: NextPage<CartProps> = ({
           }  gap-2 bg-[#99E5Ef] text-[#0F0F0F] p-2 rounded-b transition-all cursor-pointer`}
         >
           <ShoppingCart color="#323234" />
-          <span className="text-gray-1 text-Text-xs">Add to cart</span>
+          <span className="text-gray-1 text-Text-xs">
+            {cta || "Add to cart"}
+          </span>
         </p>
       </div>
 
@@ -107,7 +123,7 @@ const Cart: NextPage<CartProps> = ({
               {item.variants.map((variant, index) => (
                 <div
                   key={index}
-                  className="inline-flex justify-center items-center rounded-full"
+                  className="inline-flex justify-center items-center rounded-full cursor-pointer transition-all hover:scale-110"
                   style={{
                     backgroundColor:
                       selectedVariant === "white"

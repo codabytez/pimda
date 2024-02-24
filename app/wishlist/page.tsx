@@ -1,3 +1,4 @@
+import React from "react";
 import Wishlist from "@/components/Wishlist/Wishlist";
 import { NextPage } from "next";
 

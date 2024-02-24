@@ -1,5 +1,5 @@
+import React from "react";
 import { Metadata, NextPage } from "next";
-import Link from "next/link";
 import notFound from "@/public/images/Page-Not-Found.svg";
 import Image from "next/image";
 import Button from "@/components/UI/Button";

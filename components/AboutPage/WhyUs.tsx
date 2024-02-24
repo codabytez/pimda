@@ -1,3 +1,4 @@
+import React from "react";
 import { Moneybag, Sale, Shop, ShoppingBag } from "./WhyusSvg";
 import { NextPage } from "next";
 

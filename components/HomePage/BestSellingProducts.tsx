@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../UI/Button";
 import { ArrowRight2 } from "iconsax-react";
-import north_coat from "@/public/images/products/The-North-Face-x-Gucci-coat.png";
-import gucci_bag from "@/public/images/products/Gucci-Savoy-medium-duffle-bag.png";
-import cpu_cooler from "@/public/images/products/cpu-cooler.png";
+import northCoat from "@/public/images/products/The-North-Face-x-Gucci-coat.png";
+import gucciBag from "@/public/images/products/Gucci-Savoy-medium-duffle-bag.png";
+import cpuCooler from "@/public/images/products/cpu-cooler.png";
 import bookshelf from "@/public/images/products/small-bookshelf.png";
 import Cart from "../UI/Cart";
 import { NextPage } from "next";
@@ -13,7 +13,7 @@ const BestSellingProducts: NextPage = () => {
     {
       name: "The north coat",
       price: 360,
-      images: [north_coat.src],
+      images: [northCoat.src],
       discount: 10,
       variants: ["red"],
       rating: 5,
@@ -22,7 +22,7 @@ const BestSellingProducts: NextPage = () => {
     {
       name: "Gucci duffle bag",
       price: 1160,
-      images: [gucci_bag.src],
+      images: [gucciBag.src],
       discount: 20,
       rating: 4.5,
       totalRatings: 65,
@@ -30,7 +30,7 @@ const BestSellingProducts: NextPage = () => {
     {
       name: "RGB liquid CPU cooler",
       price: 170,
-      images: [cpu_cooler.src],
+      images: [cpuCooler.src],
       discount: 12,
       variants: ["black"],
       rating: 4.5,

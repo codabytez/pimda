@@ -1,3 +1,4 @@
+import React from "react";
 import Homepage from "@/components/HomePage/Homepage";
 import { NextPage } from "next";
 

@@ -1,3 +1,4 @@
+import React from "react";
 import HeroCategories from "./HeroCategories";
 import TopProducts from "./TopProducts";
 import RecommendedProduct from "./RecommendedProduct";

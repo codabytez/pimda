@@ -1,3 +1,4 @@
+import React from "react";
 import { Metadata, NextPage } from "next";
 import About from "@/components/AboutPage/About";
 

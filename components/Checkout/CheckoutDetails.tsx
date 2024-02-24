@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { NextPage } from "next";
 import lcdMonitor from "@/public/images/products/gaming-monitor.png";
 import gamepad from "@/public/images/products/g92-hv-pad.png";

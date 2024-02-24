@@ -1,3 +1,4 @@
+import React from "react";
 import { NextPage } from "next";
 import success from "@/public/images/success.svg";
 import Image from "next/image";
@@ -12,7 +13,7 @@ const Feedback: NextPage<{ feedback: boolean; onClose: () => void }> = ({
       <div className="flex flex-col justify-center items-center">
         <Image src={success} alt="Success" width={219} height={219} />
         <h3 className="text-gray-2 text-center text-Display-md font-semibold">
-          Order placed successful
+          Order placed successful {feedback}
         </h3>
       </div>
       <Button size="lg" width="305px" onClick={onClose}>

@@ -94,6 +94,7 @@ interface itemProps {
 
 interface CartProps {
   item: itemProps;
+  isDraft?: boolean;
   isNew?: boolean;
   isHot?: boolean;
   showDiscount?: boolean;
@@ -102,6 +103,7 @@ interface CartProps {
   ratingPosition?: "side" | "below";
   wishlist?: boolean;
   recentlyViewed?: boolean;
+  cta?: string;
 }
 
 interface CartItemProps {

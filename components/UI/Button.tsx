@@ -1,3 +1,4 @@
+import React from "react";
 import { NextPage } from "next";
 import Link from "next/link";
 
@@ -56,6 +57,7 @@ const Button: NextPage<ButtonProps> = ({
       disabled={(isLoading ?? disabled) || disabled}
       className={classNames}
       onClick={onClick}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
       style={{
         width: width ? width : "auto",

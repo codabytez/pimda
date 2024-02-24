@@ -1,3 +1,42 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:react/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-unused-expressions": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "react/no-unknown-property": ["error", { "ignore": ["jsx"] }],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "enforce",
+        "custom": "ignore",
+        "exceptions": ["Image"] // Add exceptions for specific components
+      }
+    ],
+    "react/prop-types": "off", // Disable prop-types rule if you are using TypeScript
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "handle", // Customize event handler naming convention if needed
+        "eventHandlerPropPrefix": "on" // Customize event handler prop prefix if needed
+      }
+    ],
+    // Add custom rules for SVG attribute naming conventions
+    "camelcase": [
+      "error",
+      {
+        "allow": ["^data-", "^aria-"]
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
