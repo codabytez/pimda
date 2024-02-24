@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 "use client";
 import { Eye, EyeSlash } from "iconsax-react";
 import React, { useState } from "react";
@@ -93,8 +94,6 @@ export function Input({
   rightIcon,
   type,
   isLoading,
-  iconColor,
-  iconSize,
   disabled,
   onChange,
   placeholder,

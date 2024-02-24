@@ -32,7 +32,7 @@ const PostProduct: NextPage = () => {
           w={"full"}
           spacing={20}
         >
-          {/* <ProductInformation /> */}
+          <ProductInformation />
           <ProductDetailInformation />
 
           <HStack w={"full"} spacing={6} justifyContent={"space-between"}>

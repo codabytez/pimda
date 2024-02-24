@@ -9,8 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { Gallery } from "iconsax-react";
 import React from "react";
+import { NextPage } from "next";
 
-const ProfilePage = ({ username }: { username: string }) => {
+const ProfilePage: NextPage<{ params: { username: string } }> = ({
+  params: { username },
+}) => {
   return (
     <VStack spacing={4} alignItems={"flex-start"}>
       <Heading as={"h2"} color={"#80DEEB"} fontSize={20} fontWeight={500}>
